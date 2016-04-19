@@ -32,7 +32,7 @@ class SonataCacheBundleAlt extends Bundle
         }
 
         if (method_exists($options['base_template_class'], 'attachRecorder')) {
-            call_user_func(array($options['base_template_class'], 'attachRecorder'), $this->container->get('sonata.cache.recorder'));
+            call_user_func(array($options['base_template_class'], 'attachRecorder'), $this->container->get('sonata.cache_alt.recorder'));
         }
     }
 }

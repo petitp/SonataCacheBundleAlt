@@ -56,11 +56,11 @@ class SonataCacheAltExtension extends Extension
      */
     public function configureInvalidation(ContainerBuilder $container, $config)
     {
-        $cacheManager = $container->getDefinition('sonata.cache.manager');
+        $cacheManager = $container->getDefinition('sonata.cache_alt.manager');
 
         $cacheManager->replaceArgument(0, new Reference($config['cache_invalidation']['service']));
 
-        $recorder = $container->getDefinition('sonata.cache.model_identifier');
+        $recorder = $container->getDefinition('sonata.cache_alt.model_identifier');
         foreach ($config['cache_invalidation']['classes'] as $class => $method) {
             $recorder->addMethodCall('addClass', array($class, $method));
         }
@@ -78,18 +78,18 @@ class SonataCacheAltExtension extends Extension
     {
         if (isset($config['caches']['esi'])) {
             $container
-                ->getDefinition('sonata.cache.esi')
+                ->getDefinition('sonata.cache_alt.esi')
                 ->replaceArgument(0, $config['caches']['esi']['token'])
                 ->replaceArgument(1, $config['caches']['esi']['servers'])
             ;
         } else {
-            $container->removeDefinition('sonata.cache.esi');
+            $container->removeDefinition('sonata.cache_alt.esi');
         }
 
         if (isset($config['caches']['mongo'])) {
             if (!class_exists('\Mongo', true)) {
                 throw new \RuntimeException(<<<HELP
-The `sonata.cache.mongo` service is configured, however the Mongo class is not available.
+The `sonata.cache_alt.mongo` service is configured, however the Mongo class is not available.
 
 To resolve this issue, please install the related library : http://php.net/manual/en/book.mongo.php
 or remove the mongo cache settings from the configuration file.
@@ -107,20 +107,20 @@ HELP
             }
 
             $container
-                ->getDefinition('sonata.cache.mongo')
+                ->getDefinition('sonata.cache_alt.mongo')
                 ->replaceArgument(0, $servers)
                 ->replaceArgument(1, $config['caches']['mongo']['database'])
                 ->replaceArgument(2, $config['caches']['mongo']['collection'])
             ;
         } else {
-            $container->removeDefinition('sonata.cache.mongo');
+            $container->removeDefinition('sonata.cache_alt.mongo');
         }
 
         if (isset($config['caches']['memcached'])) {
 
             if (!class_exists('\Memcached', true)) {
                 throw new \RuntimeException(<<<HELP
-The `sonata.cache.memcached` service is configured, however the Memcached class is not available.
+The `sonata.cache_alt.memcached` service is configured, however the Memcached class is not available.
 
 To resolve this issue, please install the related library : http://php.net/manual/en/book.memcached.php
 or remove the memcached cache settings from the configuration file.
@@ -129,19 +129,19 @@ HELP
             }
 
             $container
-                ->getDefinition('sonata.cache.memcached')
+                ->getDefinition('sonata.cache_alt.memcached')
                 ->replaceArgument(0, $config['caches']['memcached']['prefix'])
                 ->replaceArgument(1, $config['caches']['memcached']['servers'])
             ;
         } else {
-            $container->removeDefinition('sonata.cache.memcached');
+            $container->removeDefinition('sonata.cache_alt.memcached');
         }
 
         if (isset($config['caches']['memcache'])) {
 
             if (!class_exists('\Memcache', true)) {
                 throw new \RuntimeException(<<<HELP
-The `sonata.cache.memcache` service is configured, however the Memcache class is not available.
+The `sonata.cache_alt.memcache` service is configured, however the Memcache class is not available.
 
 To resolve this issue, please install the related library : http://php.net/manual/en/book.memcache.php
 or remove the memcache cache settings from the configuration file.
@@ -150,12 +150,12 @@ HELP
             }
 
             $container
-                ->getDefinition('sonata.cache.memcache')
+                ->getDefinition('sonata.cache_alt.memcache')
                 ->replaceArgument(0, $config['caches']['memcache']['prefix'])
                 ->replaceArgument(1, $config['caches']['memcache']['servers'])
             ;
         } else {
-            $container->removeDefinition('sonata.cache.memcache');
+            $container->removeDefinition('sonata.cache_alt.memcache');
         }
 
         //AHU redis
@@ -163,7 +163,7 @@ HELP
 
             if (!class_exists('\Redis', true)) {
                 throw new \RuntimeException(<<<HELP
-The `sonata.cache.redis` service is configured, however the Redis class is not available.
+The `sonata.cache_alt.redis` service is configured, however the Redis class is not available.
 
 To resolve this issue, please install the related library : https://github.com/nicolasff/phpredis
 or remove the redis cache settings from the configuration file.
@@ -172,24 +172,24 @@ HELP
             }
 
             $container
-                ->getDefinition('sonata.cache.redis')
+                ->getDefinition('sonata.cache_alt.redis')
                 ->replaceArgument(0, $config['caches']['redis']['prefix'])
                 ->replaceArgument(1, $config['caches']['redis']['servers'])
             ;
         } else {
-            $container->removeDefinition('sonata.cache.redis');
+            $container->removeDefinition('sonata.cache_alt.redis');
         }
 
         //AHU file cache
         if (isset($config['caches']['file'])) {
 
             $container
-                ->getDefinition('sonata.cache.file')
+                ->getDefinition('sonata.cache_alt.file')
                 ->replaceArgument(0, $config['caches']['file']['prefix'])
                 ->replaceArgument(1, $config['caches']['file']['directories'])
             ;
         } else {
-            $container->removeDefinition('sonata.cache.file');
+            $container->removeDefinition('sonata.cache_alt.file');
         }
 
         //TODO AHU this should be changed
@@ -197,7 +197,7 @@ HELP
 
             if (!class_exists('\Memcache', true)) {
                 throw new \RuntimeException(<<<HELP
-The `sonata.cache.memcache` service is configured, however the Memcache class is not available.
+The `sonata.cache_alt.memcache` service is configured, however the Memcache class is not available.
 
 To resolve this issue, please install the related library : http://php.net/manual/en/book.memcache.php
 or remove the memcache cache settings from the configuration file.
@@ -206,19 +206,19 @@ HELP
             }
 
             $container
-                ->getDefinition('sonata.cache.fallback_memcache')
+                ->getDefinition('sonata.cache_alt.fallback_memcache')
                 ->replaceArgument(0, $config['caches']['fallback_memcache']['prefix'])
                 ->replaceArgument(1, $config['caches']['fallback_memcache']['servers'])
             ;
         } else {
-            $container->removeDefinition('sonata.cache.fallback_memcache');
+            $container->removeDefinition('sonata.cache_alt.fallback_memcache');
         }
 
         if (isset($config['caches']['fallback_memcached'])) {
 
             if (!class_exists('\Memcached', true)) {
                 throw new \RuntimeException(<<<HELP
-The `sonata.cache.memcached` service is configured, however the Memcached class is not available.
+The `sonata.cache_alt.memcached` service is configured, however the Memcached class is not available.
 
 To resolve this issue, please install the related library : http://php.net/manual/en/book.memcached.php
 or remove the memcached cache settings from the configuration file.
@@ -227,12 +227,12 @@ HELP
             }
 
             $container
-                ->getDefinition('sonata.cache.fallback_memcached')
+                ->getDefinition('sonata.cache_alt.fallback_memcached')
                 ->replaceArgument(0, $config['caches']['fallback_memcached']['prefix'])
                 ->replaceArgument(1, $config['caches']['fallback_memcached']['servers'])
             ;
         } else {
-            $container->removeDefinition('sonata.cache.fallback_memcached');
+            $container->removeDefinition('sonata.cache_alt.fallback_memcached');
         }
         //end TODO
 
@@ -248,7 +248,7 @@ HELP
 
             if (!function_exists('apc_fetch')) {
                 throw new \RuntimeException(<<<HELP
-The `sonata.cache.apc` service is configured, however the apc_* functions are not available.
+The `sonata.cache_alt.apc` service is configured, however the apc_* functions are not available.
 
 To resolve this issue, please install the related library : http://php.net/manual/en/book.apc.php
 or remove the APC cache settings from the configuration file.
@@ -257,13 +257,13 @@ HELP
             }
 
             $container
-                ->getDefinition('sonata.cache.apc')
+                ->getDefinition('sonata.cache_alt.apc')
                 ->replaceArgument(1, $config['caches']['apc']['token'])
                 ->replaceArgument(2, $config['caches']['apc']['prefix'])
                 ->replaceArgument(3, $config['caches']['apc']['servers'])
             ;
         } else {
-            $container->removeDefinition('sonata.cache.apc');
+            $container->removeDefinition('sonata.cache_alt.apc');
         }
     }
 

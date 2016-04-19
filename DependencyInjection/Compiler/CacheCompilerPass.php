@@ -38,13 +38,13 @@ class CacheCompilerPass implements CompilerPassInterface
             $caches[$id] = new Reference($id);
         }
 
-        if ($container->hasDefinition('sonata.cache.orm.event_subscriber.default')) {
-            $container->getDefinition('sonata.cache.orm.event_subscriber.default')
+        if ($container->hasDefinition('sonata.cache_alt.orm.event_subscriber.default')) {
+            $container->getDefinition('sonata.cache_alt.orm.event_subscriber.default')
                 ->replaceArgument(1, $caches);
         }
 
-        if ($container->hasDefinition('sonata.cache.manager')) {
-            $container->getDefinition('sonata.cache.manager')
+        if ($container->hasDefinition('sonata.cache_alt.manager')) {
+            $container->getDefinition('sonata.cache_alt.manager')
                 ->replaceArgument(1, $caches);
         }
     }

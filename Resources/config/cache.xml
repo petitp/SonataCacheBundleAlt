@@ -5,71 +5,71 @@
 
     <services>
 
-        <service id="sonata.cache.manager" class="Sonata\CacheBundleAlt\Cache\CacheManager" >
+        <service id="sonata.cache_alt.manager" class="Sonata\CacheBundleAlt\Cache\CacheManager" >
             <argument />
             <argument />
         </service>
 
 
-        <service id="sonata.cache.recorder" class="Sonata\CacheBundleAlt\Invalidation\Recorder" >
-            <argument type="service" id="sonata.cache.model_identifier"/>
+        <service id="sonata.cache_alt.recorder" class="Sonata\CacheBundleAlt\Invalidation\Recorder" >
+            <argument type="service" id="sonata.cache_alt.model_identifier"/>
         </service>
 
-        <service id="sonata.cache.model_identifier" class="Sonata\CacheBundleAlt\Invalidation\ModelCollectionIdentifiers" >
+        <service id="sonata.cache_alt.model_identifier" class="Sonata\CacheBundleAlt\Invalidation\ModelCollectionIdentifiers" >
             <argument type="collection" />
         </service>
 
-        <service id="sonata.cache.noop" class="Sonata\CacheBundleAlt\Adapter\NoopCache">
+        <service id="sonata.cache_alt.noop" class="Sonata\CacheBundleAlt\Adapter\NoopCache">
             <tag name="sonata.cache" />
         </service>
 
-        <service id="sonata.cache.mongo" class="Sonata\CacheBundleAlt\Adapter\MongoCache" >
+        <service id="sonata.cache_alt.mongo" class="Sonata\CacheBundleAlt\Adapter\MongoCache" >
             <tag name="sonata.cache" />
             <argument type="collection" />
             <argument />
             <argument />
         </service>
 
-        <service id="sonata.cache.memcached" class="Sonata\CacheBundleAlt\Adapter\MemcachedCache" >
-            <tag name="sonata.cache" />
-            <argument />
-            <argument type="collection" />
-        </service>
-
-        <service id="sonata.cache.memcache" class="Sonata\CacheBundleAlt\Adapter\MemcacheCache" >
+        <service id="sonata.cache_alt.memcached" class="Sonata\CacheBundleAlt\Adapter\MemcachedCache" >
             <tag name="sonata.cache" />
             <argument />
             <argument type="collection" />
         </service>
 
-        <!-- TODO AHU this must be more universal -->
-        <service id="sonata.cache.fallback_memcache" class="Sonata\CacheBundleAlt\Adapter\MemcacheCache" >
+        <service id="sonata.cache_alt.memcache" class="Sonata\CacheBundleAlt\Adapter\MemcacheCache" >
             <tag name="sonata.cache" />
             <argument />
             <argument type="collection" />
         </service>
 
         <!-- TODO AHU this must be more universal -->
-        <service id="sonata.cache.fallback_memcached" class="Sonata\CacheBundleAlt\Adapter\MemcachedCache" >
+        <service id="sonata.cache_alt.fallback_memcache" class="Sonata\CacheBundleAlt\Adapter\MemcacheCache" >
+            <tag name="sonata.cache" />
+            <argument />
+            <argument type="collection" />
+        </service>
+
+        <!-- TODO AHU this must be more universal -->
+        <service id="sonata.cache_alt.fallback_memcached" class="Sonata\CacheBundleAlt\Adapter\MemcachedCache" >
             <tag name="sonata.cache" />
             <argument />
             <argument type="collection" />
         </service>
 
         <!-- AHU added -->
-        <service id="sonata.cache.redis" class="Sonata\CacheBundleAlt\Adapter\RedisCache" >
+        <service id="sonata.cache_alt.redis" class="Sonata\CacheBundleAlt\Adapter\RedisCache" >
             <tag name="sonata.cache" />
             <argument />
             <argument type="collection" />
         </service>
 
-        <service id="sonata.cache.file" class="Sonata\CacheBundleAlt\Adapter\FileCache" >
+        <service id="sonata.cache_alt.file" class="Sonata\CacheBundleAlt\Adapter\FileCache" >
             <tag name="sonata.cache" />
             <argument />
             <argument type="collection" />
         </service>
 
-        <service id="sonata.cache.apc" class="Sonata\CacheBundleAlt\Adapter\ApcCache" >
+        <service id="sonata.cache_alt.apc" class="Sonata\CacheBundleAlt\Adapter\ApcCache" >
             <tag name="sonata.cache" />
             <argument type="service" id="router" />
             <argument />
@@ -77,7 +77,7 @@
             <argument type="collection" />
         </service>
 
-        <service id="sonata.cache.esi" class="Sonata\CacheBundleAlt\Adapter\EsiCache">
+        <service id="sonata.cache_alt.esi" class="Sonata\CacheBundleAlt\Adapter\EsiCache">
             <tag name="sonata.cache" />
             <argument />
             <argument type="collection" />
@@ -85,7 +85,7 @@
             <argument type="service" id="controller_resolver" />
         </service>
 
-        <service id="sonata.cache.invalidation.simple" class="Sonata\CacheBundleAlt\Invalidation\SimpleCacheInvalidation">
+        <service id="sonata.cache_alt.invalidation.simple" class="Sonata\CacheBundleAlt\Invalidation\SimpleCacheInvalidation">
             <argument type="service" id="logger" />
         </service>
     </services>
