@@ -8,13 +8,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonata\CacheBundle\Cache;
+namespace Sonata\CacheBundleAlt\Cache;
 
 interface CacheInterface
 {
     /**
      * @param array $keys
-     * @return \Sonata\CacheBundle\Cache\CacheElement
+     * @return \Sonata\CacheBundleAlt\Cache\CacheElement
      */
     function get(array $keys, array $tags = array());
 

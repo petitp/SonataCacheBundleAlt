@@ -8,13 +8,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonata\CacheBundle\Adapter;
+namespace Sonata\CacheBundleAlt\Adapter;
 
 use Symfony\Component\Routing\Router;
 use Symfony\Component\HttpFoundation\Response;
 
-use Sonata\CacheBundle\Cache\CacheInterface;
-use Sonata\CacheBundle\Cache\CacheElement;
+use Sonata\CacheBundleAlt\Cache\CacheInterface;
+use Sonata\CacheBundleAlt\Cache\CacheElement;
 
 class MongoCache implements CacheInterface
 {

@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonata\CacheBundle\DependencyInjection;
+namespace Sonata\CacheBundleAlt\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -26,7 +26,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $node = $treeBuilder->root('sonata_cache')->children();
+        $node = $treeBuilder->root('sonata_cache_alt')->children();
 
         $node
             ->arrayNode('cache_invalidation')

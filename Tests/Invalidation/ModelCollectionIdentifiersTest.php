@@ -10,9 +10,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonata\CacheBundle\Tests\Invalidation;
+namespace Sonata\CacheBundleAlt\Tests\Invalidation;
 
-use Sonata\CacheBundle\Invalidation\ModelCollectionIdentifiers;
+use Sonata\CacheBundleAlt\Invalidation\ModelCollectionIdentifiers;
 
 
 class Model_1  {
@@ -46,7 +46,7 @@ class CacheElementTest extends \PHPUnit_Framework_TestCase
     public function test()
     {
         $collection = new ModelCollectionIdentifiers(array(
-            'Sonata\CacheBundle\Tests\Invalidation\Model_3' => 'getId'
+            'Sonata\CacheBundleAlt\Tests\Invalidation\Model_3' => 'getId'
         ));
 
         $m3 = new Model_3;
@@ -56,7 +56,7 @@ class CacheElementTest extends \PHPUnit_Framework_TestCase
         $m1 = new Model_1;
         $this->assertEquals('getCacheIdentifier', $collection->getMethod($m1));
 
-        $collection->addClass('Sonata\CacheBundle\Tests\Invalidation\Model_3', 'getSuperCache');
+        $collection->addClass('Sonata\CacheBundleAlt\Tests\Invalidation\Model_3', 'getSuperCache');
 
         $this->assertEquals('super!', $collection->getIdentifier($m3));
     }

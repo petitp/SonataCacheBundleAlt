@@ -8,10 +8,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonata\CacheBundle\Invalidation;
+namespace Sonata\CacheBundleAlt\Invalidation;
 
-use Sonata\CacheBundle\Cache\CacheInterface;
-use Sonata\CacheBundle\Invalidation\ModelCollectionIdentifiers;
+use Sonata\CacheBundleAlt\Cache\CacheInterface;
+use Sonata\CacheBundleAlt\Invalidation\ModelCollectionIdentifiers;
 
 use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Events;

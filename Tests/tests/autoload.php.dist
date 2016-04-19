@@ -22,7 +22,7 @@ if (is_file($autoload)) {
     $loader->register();
 
     spl_autoload_register(function($class) {
-        if (0 === strpos($class, 'Sonata\\CacheBundle\\')) {
+        if (0 === strpos($class, 'Sonata\\CacheBundleAlt\\')) {
             $path = __DIR__.'/../../'.implode('/', array_slice(explode('\\', $class), 2)).'.php';
 
             if (!stream_resolve_include_path($path)) {

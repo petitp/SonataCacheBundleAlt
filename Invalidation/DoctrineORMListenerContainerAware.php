@@ -8,11 +8,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonata\CacheBundle\Invalidation;
+namespace Sonata\CacheBundleAlt\Invalidation;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-use Sonata\CacheBundle\Cache\CacheInterface;
+use Sonata\CacheBundleAlt\Cache\CacheInterface;
 use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Events;
 use Doctrine\ORM\Event\LifecycleEventArgs;

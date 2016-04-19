@@ -8,25 +8,25 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonata\CacheBundle\Cache;
+namespace Sonata\CacheBundleAlt\Cache;
 
-use Sonata\CacheBundle\Cache\CacheInterface;
-use Sonata\CacheBundle\Cache\CacheElement;
-use Sonata\CacheBundle\Invalidation\InvalidationInterface;
-use Sonata\CacheBundle\Invalidation\Recorder;
+use Sonata\CacheBundleAlt\Cache\CacheInterface;
+use Sonata\CacheBundleAlt\Cache\CacheElement;
+use Sonata\CacheBundleAlt\Invalidation\InvalidationInterface;
+use Sonata\CacheBundleAlt\Invalidation\Recorder;
 
 interface CacheManagerInterface
 {
     /**
      * @param $name
-     * @param \Sonata\CacheBundle\Cache\CacheInterface $cacheManager
+     * @param \Sonata\CacheBundleAlt\Cache\CacheInterface $cacheManager
      * @return void
      */
     function addCacheService($name, CacheInterface $cacheManager);
 
     /**
      * @param $name
-     * @return \Sonata\CacheBundle\Cache\CacheInterface
+     * @return \Sonata\CacheBundleAlt\Cache\CacheInterface
      */
     function getCacheService($name);
 
@@ -51,13 +51,13 @@ interface CacheManagerInterface
     function invalidate(array $keys);
 
     /**
-     * @param \Sonata\CacheBundle\Invalidation\Recorder $recorder
+     * @param \Sonata\CacheBundleAlt\Invalidation\Recorder $recorder
      * @return void
      */
     function setRecorder(Recorder $recorder);
 
     /**
-     * @return \Sonata\CacheBundle\Invalidation\Recorder
+     * @return \Sonata\CacheBundleAlt\Invalidation\Recorder
      */
     function getRecorder();
 }

@@ -10,9 +10,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonata\CacheBundle\Tests\Cache;
+namespace Sonata\CacheBundleAlt\Tests\Cache;
 
-use Sonata\CacheBundle\Cache\CacheElement;
+use Sonata\CacheBundleAlt\Cache\CacheElement;
 
 class CacheElementTest extends \PHPUnit_Framework_TestCase
 {

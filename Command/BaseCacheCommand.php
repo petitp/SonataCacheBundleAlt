@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonata\CacheBundle\Command;
+namespace Sonata\CacheBundleAlt\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 
 abstract class BaseCacheCommand extends ContainerAwareCommand
 {
     /**
-     * @return \Sonata\CacheBundle\Cache\CacheManagerServiceInterface
+     * @return \Sonata\CacheBundleAlt\Cache\CacheManagerServiceInterface
      */
     public function getManager()
     {

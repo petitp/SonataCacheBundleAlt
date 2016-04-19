@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonata\CacheBundle\Adapter;
+namespace Sonata\CacheBundleAlt\Adapter;
 
-use Sonata\CacheBundle\Cache\CacheInterface;
-use Sonata\CacheBundle\Cache\CacheElement;
+use Sonata\CacheBundleAlt\Cache\CacheInterface;
+use Sonata\CacheBundleAlt\Cache\CacheElement;
 
 class MemcachedCache implements CacheInterface
 {
@@ -179,7 +179,7 @@ class MemcachedCache implements CacheInterface
         //return $this->getCollection()->get($this->computeCacheKeys($keys));
         $result =  $this->getCollection()->get($this->computeCacheKeys($keys, $tags));
 
-        if ((false !== $result) && ($result instanceof \Sonata\CacheBundle\Cache\CacheElement)) {
+        if ((false !== $result) && ($result instanceof \Sonata\CacheBundleAlt\Cache\CacheElement)) {
             return $result;
         }
 

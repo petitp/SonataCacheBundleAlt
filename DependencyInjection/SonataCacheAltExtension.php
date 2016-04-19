@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonata\CacheBundle\DependencyInjection;
+namespace Sonata\CacheBundleAlt\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\Config\Resource\FileResource;
@@ -25,7 +25,7 @@ use Symfony\Component\Config\Definition\Processor;
  *
  * @author     Thomas Rabaix <thomas.rabaix@sonata-project.org>
  */
-class SonataCacheExtension extends Extension
+class SonataCacheAltExtension extends Extension
 {
     /**
      * Loads the url shortener configuration.

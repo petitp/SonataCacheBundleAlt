@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonata\CacheBundle\Invalidation;
+namespace Sonata\CacheBundleAlt\Invalidation;
 
 class Recorder
 {

@@ -8,10 +8,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonata\CacheBundle\Invalidation;
+namespace Sonata\CacheBundleAlt\Invalidation;
 
-use Sonata\CacheBundle\Cache\CacheElement;
-use Sonata\CacheBundle\Cache\CacheInterface;
+use Sonata\CacheBundleAlt\Cache\CacheElement;
+use Sonata\CacheBundleAlt\Cache\CacheInterface;
 use Symfony\Component\HttpKernel\Log\LoggerInterface;
 
 class SimpleCacheInvalidation implements InvalidationInterface
