@@ -6,12 +6,12 @@
 
     <services>
 
-        <service id="sonata.cache_alt.orm.event_subscriber.default" class="Sonata\CacheBundleAlt\Invalidation\DoctrineORMListener" >
+        <service id="sonata.cache_alt.orm.event_subscriber.default" class="Sonata\CacheAltBundle\Invalidation\DoctrineORMListener" >
             <argument type="service" id="sonata.cache_alt.model_identifier" />
             <argument />
         </service>
 
-        <service id="sonata.cache_alt.orm.event_subscriber" class="Sonata\CacheBundleAlt\Invalidation\DoctrineORMListenerContainerAware">
+        <service id="sonata.cache_alt.orm.event_subscriber" class="Sonata\CacheAltBundle\Invalidation\DoctrineORMListenerContainerAware">
             <tag name="doctrine.event_subscriber" connection="default" />
             <argument type="service" id="service_container" />
             <argument>sonata.cache_alt.orm.event_subscriber.default</argument>

@@ -18,7 +18,7 @@ Now, add the new Bundle to the kernel
     {
         return array(
             // Vendor specifics bundles
-            new Sonata\CacheBundleAlt\SonataCacheBundle(),
+            new Sonata\CacheAltBundle\SonataCacheBundle(),
         );
     }
 

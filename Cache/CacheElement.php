@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonata\CacheBundleAlt\Cache;
+namespace Sonata\CacheAltBundle\Cache;
 
 final class CacheElement
 {

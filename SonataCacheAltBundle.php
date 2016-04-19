@@ -8,13 +8,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonata\CacheBundleAlt;
+namespace Sonata\CacheAltBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Sonata\CacheBundleAlt\DependencyInjection\Compiler\CacheCompilerPass;
+use Sonata\CacheAltBundle\DependencyInjection\Compiler\CacheCompilerPass;
 
-class SonataCacheBundleAlt extends Bundle
+class SonataCacheAltBundle extends Bundle
 {
     public function build(ContainerBuilder $container)
     {

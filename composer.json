@@ -23,7 +23,7 @@
         "doctrine/orm": ">=2.1.0"
     },
     "autoload": {
-        "psr-0": { "Sonata\\CacheBundleAlt": "" }
+        "psr-0": { "Sonata\\CacheAltBundle": "" }
     },
-    "target-dir": "Sonata/CacheBundleAlt"
+    "target-dir": "Sonata/CacheAltBundle"
 }

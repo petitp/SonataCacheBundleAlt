@@ -10,11 +10,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonata\CacheBundleAlt\Tests\Cache\Invalidation;
+namespace Sonata\CacheAltBundle\Tests\Cache\Invalidation;
 
-use Sonata\CacheBundleAlt\Cache\CacheElement;
-use Sonata\CacheBundleAlt\Invalidation\SimpleCacheInvalidation;
-use Sonata\CacheBundleAlt\Cache\CacheInterface;
+use Sonata\CacheAltBundle\Cache\CacheElement;
+use Sonata\CacheAltBundle\Invalidation\SimpleCacheInvalidation;
+use Sonata\CacheAltBundle\Cache\CacheInterface;
 
 class SimpleCacheInvalidationTest_Cache
 {}
@@ -25,7 +25,7 @@ class SimpleCacheInvalidationTest extends \PHPUnit_Framework_TestCase
     {
         $cacheInvalidation = new SimpleCacheInvalidation;
 
-        $cache = $this->getMock('Sonata\CacheBundleAlt\Cache\CacheInterface');
+        $cache = $this->getMock('Sonata\CacheAltBundle\Cache\CacheInterface');
         $cache->expects($this->exactly(1))->method('flush');
 
         $caches = array($cache);
@@ -40,7 +40,7 @@ class SimpleCacheInvalidationTest extends \PHPUnit_Framework_TestCase
     {
         $cacheInvalidation = new SimpleCacheInvalidation;
 
-        $cache = $this->getMock('Sonata\CacheBundleAlt\Cache\CacheInterface');
+        $cache = $this->getMock('Sonata\CacheAltBundle\Cache\CacheInterface');
         $cache->expects($this->exactly(1))->method('flush')->will($this->throwException(new \Exception));
 
         $caches = array($cache);
@@ -56,7 +56,7 @@ class SimpleCacheInvalidationTest extends \PHPUnit_Framework_TestCase
 
         $cacheInvalidation = new SimpleCacheInvalidation($logger);
 
-        $cache = $this->getMock('Sonata\CacheBundleAlt\Cache\CacheInterface');
+        $cache = $this->getMock('Sonata\CacheAltBundle\Cache\CacheInterface');
         $cache->expects($this->exactly(1))->method('flush')->will($this->throwException(new \Exception));
 
         $caches = array($cache);

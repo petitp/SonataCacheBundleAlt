@@ -10,11 +10,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonata\CacheBundleAlt\Tests\Cache;
+namespace Sonata\CacheAltBundle\Tests\Cache;
 
-use Sonata\CacheBundleAlt\Adapter\ApcCache;
+use Sonata\CacheAltBundle\Adapter\ApcCache;
 use Symfony\Component\Routing\RouterInterface;
-use Sonata\CacheBundleAlt\Cache\CacheElement;
+use Sonata\CacheAltBundle\Cache\CacheElement;
 
 class ApcCacheTest extends \PHPUnit_Framework_TestCase
 {
@@ -40,7 +40,7 @@ class ApcCacheTest extends \PHPUnit_Framework_TestCase
 
         $cacheElement = $cache->set(array('id' => 7), 'data');
 
-        $this->assertInstanceOf('Sonata\CacheBundleAlt\Cache\CacheElement', $cacheElement);
+        $this->assertInstanceOf('Sonata\CacheAltBundle\Cache\CacheElement', $cacheElement);
 
         $this->assertTrue($cache->has(array('id' => 7)));
 
@@ -48,6 +48,6 @@ class ApcCacheTest extends \PHPUnit_Framework_TestCase
 
         $cacheElement = $cache->get(array('id' => 7));
 
-        $this->assertInstanceOf('Sonata\CacheBundleAlt\Cache\CacheElement', $cacheElement);
+        $this->assertInstanceOf('Sonata\CacheAltBundle\Cache\CacheElement', $cacheElement);
     }
 }

@@ -8,10 +8,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonata\CacheBundleAlt\Adapter;
+namespace Sonata\CacheAltBundle\Adapter;
 
-use Sonata\CacheBundleAlt\Cache\CacheInterface;
-use Sonata\CacheBundleAlt\Cache\CacheElement;
+use Sonata\CacheAltBundle\Cache\CacheInterface;
+use Sonata\CacheAltBundle\Cache\CacheElement;
 
 class NoopCache implements CacheInterface
 {

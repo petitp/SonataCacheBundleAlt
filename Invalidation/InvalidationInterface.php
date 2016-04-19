@@ -8,10 +8,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonata\CacheBundleAlt\Invalidation;
+namespace Sonata\CacheAltBundle\Invalidation;
 
-use Sonata\CacheBundleAlt\Cache\CacheElement;
-use Sonata\CacheBundleAlt\Cache\CacheInterface;
+use Sonata\CacheAltBundle\Cache\CacheElement;
+use Sonata\CacheAltBundle\Cache\CacheInterface;
 
 interface InvalidationInterface
 {

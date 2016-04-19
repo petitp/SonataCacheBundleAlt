@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonata\CacheBundleAlt\Twig;
+namespace Sonata\CacheAltBundle\Twig;
 
-use Sonata\CacheBundleAlt\Invalidation\Recorder;
+use Sonata\CacheAltBundle\Invalidation\Recorder;
 
 abstract class TwigTemplate13 extends \Twig_Template
 {
     /**
-     * @var \Sonata\CacheBundleAlt\Cache\Invalidation\Recorder
+     * @var \Sonata\CacheAltBundle\Cache\Invalidation\Recorder
      */
     protected static $recorder;
 
@@ -41,7 +41,7 @@ abstract class TwigTemplate13 extends \Twig_Template
 
     /**
      * @static
-     * @param \Sonata\CacheBundleAlt\Invalidation\Recorder $recorder
+     * @param \Sonata\CacheAltBundle\Invalidation\Recorder $recorder
      */
     public static function attachRecorder(Recorder $recorder)
     {

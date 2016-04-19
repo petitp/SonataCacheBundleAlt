@@ -10,11 +10,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonata\CacheBundleAlt\Tests\Cache;
+namespace Sonata\CacheAltBundle\Tests\Cache;
 
-use Sonata\CacheBundleAlt\Adapter\EsiCache;
+use Sonata\CacheAltBundle\Adapter\EsiCache;
 use Symfony\Component\Routing\RouterInterface;
-use Sonata\CacheBundleAlt\Cache\CacheElement;
+use Sonata\CacheAltBundle\Cache\CacheElement;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -35,13 +35,13 @@ class EsiCacheTest extends \PHPUnit_Framework_TestCase
 
         $cacheElement = $cache->set(array('id' => 7), 'data');
 
-        $this->assertInstanceOf('Sonata\CacheBundleAlt\Cache\CacheElement', $cacheElement);
+        $this->assertInstanceOf('Sonata\CacheAltBundle\Cache\CacheElement', $cacheElement);
 
         $this->assertTrue($cache->has(array('id' => 7)));
 
         $cacheElement = $cache->get(array('id' => 7, 'controller' => 'foo.service::runAction', 'parameters' => array()));
 
-        $this->assertInstanceOf('Sonata\CacheBundleAlt\Cache\CacheElement', $cacheElement);
+        $this->assertInstanceOf('Sonata\CacheAltBundle\Cache\CacheElement', $cacheElement);
 
         $this->assertEquals('<esi:include src="http://sonata-project.org/cache/esi/TOKEN?controller=asdsad"/>', $cacheElement->getData()->getContent());
     }

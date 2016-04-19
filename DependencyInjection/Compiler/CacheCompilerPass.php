@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonata\CacheBundleAlt\DependencyInjection\Compiler;
+namespace Sonata\CacheAltBundle\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -30,7 +30,7 @@ class CacheCompilerPass implements CompilerPassInterface
     {
         $caches = array();
 
-        foreach ($container->findTaggedServiceIds('sonata.cache') as $id => $attributes) {
+        foreach ($container->findTaggedServiceIds('sonata.cache_alt') as $id => $attributes) {
             if (!$container->hasDefinition($id)) {
                 continue;
             }

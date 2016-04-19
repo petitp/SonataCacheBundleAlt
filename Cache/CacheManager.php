@@ -8,12 +8,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonata\CacheBundleAlt\Cache;
+namespace Sonata\CacheAltBundle\Cache;
 
-use Sonata\CacheBundleAlt\Cache\CacheInterface;
-use Sonata\CacheBundleAlt\Cache\CacheElement;
-use Sonata\CacheBundleAlt\Invalidation\InvalidationInterface;
-use Sonata\CacheBundleAlt\Invalidation\Recorder;
+use Sonata\CacheAltBundle\Cache\CacheInterface;
+use Sonata\CacheAltBundle\Cache\CacheElement;
+use Sonata\CacheAltBundle\Invalidation\InvalidationInterface;
+use Sonata\CacheAltBundle\Invalidation\Recorder;
 
 class CacheManager implements CacheManagerInterface
 {
@@ -26,7 +26,7 @@ class CacheManager implements CacheManagerInterface
     protected $recorder;
 
     /**
-     * @param \Sonata\CacheBundleAlt\Invalidation\InvalidationInterface $cacheInvalidation
+     * @param \Sonata\CacheAltBundle\Invalidation\InvalidationInterface $cacheInvalidation
      * @param array $cacheServices
      */
     public function __construct(InvalidationInterface $cacheInvalidation, array $cacheServices)

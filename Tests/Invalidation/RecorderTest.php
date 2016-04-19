@@ -10,10 +10,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonata\CacheBundleAlt\Tests\Invalidation;
+namespace Sonata\CacheAltBundle\Tests\Invalidation;
 
-use Sonata\CacheBundleAlt\Invalidation\ModelCollectionIdentifiers;
-use Sonata\CacheBundleAlt\Invalidation\Recorder;
+use Sonata\CacheAltBundle\Invalidation\ModelCollectionIdentifiers;
+use Sonata\CacheAltBundle\Invalidation\Recorder;
 
 class Recorder_Model_1
 {
@@ -38,7 +38,7 @@ class RecorderTest extends \PHPUnit_Framework_TestCase
     public function test()
     {
         $collection = new ModelCollectionIdentifiers(array(
-            'Sonata\CacheBundleAlt\Tests\Invalidation\Recorder_Model_1' => 'getCacheIdentifier'
+            'Sonata\CacheAltBundle\Tests\Invalidation\Recorder_Model_1' => 'getCacheIdentifier'
         ));
 
         $m1 = new Recorder_Model_1();
@@ -52,8 +52,8 @@ class RecorderTest extends \PHPUnit_Framework_TestCase
 
         $keys = $recorder->pop();
 
-        $this->assertArrayHasKey('Sonata\CacheBundleAlt\Tests\Invalidation\Recorder_Model_1', $keys);
-        $this->assertArrayHasKey('Sonata\CacheBundleAlt\Tests\Invalidation\Recorder_Model_2', $keys);
+        $this->assertArrayHasKey('Sonata\CacheAltBundle\Tests\Invalidation\Recorder_Model_1', $keys);
+        $this->assertArrayHasKey('Sonata\CacheAltBundle\Tests\Invalidation\Recorder_Model_2', $keys);
 
     }
 }

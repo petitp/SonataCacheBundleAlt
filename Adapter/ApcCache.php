@@ -8,15 +8,15 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonata\CacheBundleAlt\Adapter;
+namespace Sonata\CacheAltBundle\Adapter;
 
 use Symfony\Component\Routing\Router;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Component\Routing\RouterInterface;
 
-use Sonata\CacheBundleAlt\Cache\CacheInterface;
-use Sonata\CacheBundleAlt\Cache\CacheElement;
+use Sonata\CacheAltBundle\Cache\CacheInterface;
+use Sonata\CacheAltBundle\Cache\CacheElement;
 
 class ApcCache implements CacheInterface
 {

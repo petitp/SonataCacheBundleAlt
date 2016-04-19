@@ -10,9 +10,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonata\CacheBundleAlt\Tests\Cache;
+namespace Sonata\CacheAltBundle\Tests\Cache;
 
-use Sonata\CacheBundleAlt\Adapter\NoopCache;
+use Sonata\CacheAltBundle\Adapter\NoopCache;
 
 class NoopCacheTest extends \PHPUnit_Framework_TestCase
 {

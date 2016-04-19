@@ -10,10 +10,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonata\CacheBundleAlt\Tests\Cache\Invalidation;
+namespace Sonata\CacheAltBundle\Tests\Cache\Invalidation;
 
-use Sonata\CacheBundleAlt\Invalidation\ModelCollectionIdentifiers;
-use Sonata\CacheBundleAlt\Invalidation\DoctrineORMListener;
+use Sonata\CacheAltBundle\Invalidation\ModelCollectionIdentifiers;
+use Sonata\CacheAltBundle\Invalidation\DoctrineORMListener;
 
 use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Events;
@@ -40,7 +40,7 @@ class DoctrineORMListenerTest extends \PHPUnit_Framework_TestCase
             ->method('getEntity')
             ->will($this->returnValue(new DoctrineORMListenerTest_Model));
 
-        $cache = $this->getMock('Sonata\CacheBundleAlt\Cache\CacheInterface');
+        $cache = $this->getMock('Sonata\CacheAltBundle\Cache\CacheInterface');
         $cache->expects($this->exactly(2))
             ->method('flush')
             ->will($this->returnValue(true));
