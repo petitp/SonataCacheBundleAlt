@@ -71,9 +71,10 @@ class RedisCache implements CacheInterface
             $this->collection = new \Redis();
 
             $this->collection->connect($this->servers[0]['host'], $this->servers[0]['port'], $this->servers[0]['timeout']);
-
-			//AHU: TODO: add this to configuration
-			 $this->collection->select(1);
+            if (!empty($this->password)) {
+                $this->collection->auth($this->servers[0]['password']);
+            }
+            $this->collection->select($this->servers[0]['database']);
 
             //TODO use distributed Redis Array (another class) if multiple domains are available
 //            foreach ($this->servers as $server) {
