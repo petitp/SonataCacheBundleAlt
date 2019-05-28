@@ -71,7 +71,7 @@ class RedisCache implements CacheInterface
             $this->collection = new \Redis();
 
             $this->collection->connect($this->servers[0]['host'], $this->servers[0]['port'], $this->servers[0]['timeout']);
-            if (!empty($this->password)) {
+            if (!empty($this->servers[0]['password'])) {
                 $this->collection->auth($this->servers[0]['password']);
             }
             $this->collection->select($this->servers[0]['database']);
